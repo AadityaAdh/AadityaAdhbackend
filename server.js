@@ -16,7 +16,10 @@ connectDatabase();
 // Enable CORS
 
 
-app.use(cors({credentials:true,origin:"https://aadityaadhikari.com.np"}));
+// app.use(cors({credentials:true,origin:"https://aadityaadhikari.com.np"}));
+
+app.use(cors({credentials:true,origin:true}));
+
 
 
 app.use(cookieParser());
