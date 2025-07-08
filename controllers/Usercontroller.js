@@ -31,12 +31,13 @@ exports.getSingleUser = async (req, res) => {
 exports.getProfile = async (req, res) => {
 
     const { token } = req.cookies;
+    
     jwt.verify(token, secretkey, {}, (err, info) => {
         if (err) {
             //first ma ta token nai hudaina so tyo error ni aauxa
             //unverified token vayo vanae pani error nai ta aauxa
             //console.log("error in verifying or token is not verified")
-            res.status(500).json("bad")
+            res.status(500).json(token)
             //note status first hunu parxa json vanda paila
         }
         else {
