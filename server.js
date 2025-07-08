@@ -15,8 +15,8 @@ connectDatabase();
 
 // Enable CORS
 
-const allowedorigins=['http://localhost:5173','https://aadityaadhikari.com.np']
-app.use(cors({credentials:true,origin:allowedorigins}));
+
+app.use(cors({credentials:true,origin:true}));
 
 
 app.use(cookieParser());
