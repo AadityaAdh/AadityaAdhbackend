@@ -35,7 +35,7 @@ exports.getProfile = async (req, res) => {
         if (err) {
             //first ma ta token nai hudaina so tyo error ni aauxa
             //unverified token vayo vanae pani error nai ta aauxa
-            console.log("error in verifying or token is not verified")
+            //console.log("error in verifying or token is not verified")
             res.status(500).json("bad")
             //note status first hunu parxa json vanda paila
         }
