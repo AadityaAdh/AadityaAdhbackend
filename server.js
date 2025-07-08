@@ -14,7 +14,9 @@ dotenv.config({ path: "./.env" });
 connectDatabase();
 
 // Enable CORS
-app.use(cors({credentials:true,origin:'https://aadityaadhikari.com.np'}));
+
+const allowedorigins=['http://localhost:5173','https://aadityaadhikari.com.np']
+app.use(cors({credentials:true,origin:allowedorigins}));
 
 
 app.use(cookieParser());
