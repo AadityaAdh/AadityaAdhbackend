@@ -19,11 +19,11 @@ exports.getSingleUser = async (req, res) => {
 
         jwt.sign({ uniqueid: user.uniqueid, id: user._id }, secretkey, {}, (err, token) => {
             if (err) throw err;
-            res.cookie('token', token, {
+            res.status(200).cookie('token', token, {
                 httpOnly: true,
                 secure: true,         // Required for HTTPS domains
                 sameSite: 'None'      // Required to send cookie across domains
-            }).json('okay').status(200)
+            }).json('okay');
         })
     }
 }
@@ -40,7 +40,7 @@ exports.getProfile = async (req, res) => {
             //note status first hunu parxa json vanda paila
         }
         else {
-            res.json(info).status(200)
+            res.status(200).json(info)
         }
 
     })
@@ -48,7 +48,7 @@ exports.getProfile = async (req, res) => {
 
 exports.userLogout = async (req, res) => {
 
-    res.cookie('token', '').json('okay').status(200);
+    res.status(200).cookie('token', '').json('okay');
     //tyo jwt le na banako token or empty pathai dini aani ta vai halyo
     //cookie reset gare ko
 }
