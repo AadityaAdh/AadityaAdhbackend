@@ -38,7 +38,7 @@ exports.createPost = async (req, res, next) => {
 
 exports.getAllPosts = async (req, res) => {
 
-    const post = await Post.find()
+    const post = await Post.find().sort({ createdAt: -1 });
 
     res.status(200).json({ post })
 }

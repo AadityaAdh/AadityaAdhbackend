@@ -58,7 +58,7 @@ exports.createBlog = async (req, res, next) => {
 exports.getAllBlogs = async (req, res) => {
     
 
-    const blog = await Blog.find()
+    const blog = await Blog.find().sort({ createdAt: -1 });
     
 
     res.status(200).json({ blog })
