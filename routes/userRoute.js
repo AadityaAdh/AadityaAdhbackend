@@ -10,6 +10,6 @@ router.route("/profile").get(getProfile)
 //yedi milyo vanae matrai access garni
 //simply login garnu ko kaam yo token generate garnu 
 
-router.route("/logout").post(userLogout)
+router.route("/logout").get(userLogout)
 
 module.exports=router
