@@ -18,7 +18,7 @@ connectDatabase();
 
 // app.use(cors({credentials:true,origin:"https://aadityaadhikari.com.np"}));
 
-app.use(cors({credentials:true,origin:true}));
+app.use(cors({credentials:true,origin:"http://localhost:5173"}));
 
 
 
